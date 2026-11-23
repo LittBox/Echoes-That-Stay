@@ -1,4 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
 ---
-<Base title="关于 · 回声收集站"><header class="page-head"><div class="eyebrow">The story behind it</div><h1>为什么是回声收集站？</h1><p>有些话，听完很久，依然有回声。</p></header><article class="detail content-prose"><p>这里是回声收集站，收藏那些在访谈结束后，仍在我脑海里回响的话。有时记得意思，却想不起原句，于是把它们留在这里。等需要一点力量的时候，再回来读一读。</p><p>这个项目的起点，是我渐渐喜欢上看访谈节目，尤其爱看鲁豫主持的对话。每次看完，总会有那么几句话停留在脑海里；可过了一阵，再想准确说出它们，却很难从漫长的视频中重新找到。</p><p>所以我想给这些话一个可以安放的地方。留下原句，也留下出处、时间位置，以及它为什么打动了我。</p><p>Echoes That Stay · 回声收集站，也是我的个人精神充电站。</p><a class="back" href="/echoes/">去读读这些回声 →</a></article></Base>
+<Base title="关于 · 回声收集站"><header class="page-head"><div class="eyebrow">The story behind it</div><h1>为什么是回声收集站？</h1><p>有些话，听完很久，依然有回声。</p></header><article class="detail content-prose"><p>这里是回声收集站，收藏那些在访谈结束后，仍在我脑海里回响的话。有时记得意思，却想不起原句，于是把它们留在这里。等需要一点力量的时候，再回来读一读。</p><p>这个项目的起点，是我渐渐喜欢上看访谈节目，尤其爱看鲁豫主持的对话。每次看完，总会有那么几句话停留在脑海里；可过了一阵，再想准确说出它们，却很难从漫长的视频中重新找到。</p><p>所以我想给这些话一个可以安放的地方。留下原句，也留下出处、时间位置，以及它为什么打动了我。</p><p>Echoes That Stay · 回声收集站，也是我的个人精神充电站。</p><a class="back" href={`${base}echoes/`}>去读读这些回声 →</a></article></Base>

@@ -12,6 +12,7 @@ const { interview } = Astro.props;
 const echoes = (await getCollection('echoes'))
   .filter((e) => e.data.interview.id === interview.id)
   .sort((a, b) => a.data.sourceRange.startMs - b.data.sourceRange.startMs);
+const base = import.meta.env.BASE_URL;
 ---
 <Base title={`${interview.data.title} · 访谈档案`}>
   <header class="page-head">
@@ -51,5 +52,5 @@ const echoes = (await getCollection('echoes'))
     </ul>
   </section>
 
-  <a class="back" href="/interviews/">← 返回访谈档案</a>
+  <a class="back" href={`${base}interviews/`}>← 返回访谈档案</a>
 </Base>

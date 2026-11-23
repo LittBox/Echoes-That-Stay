@@ -23,6 +23,7 @@ const related = (await getCollection('echoes'))
 
 const speakerName = echo.data.speaker ?? echo.data.speakerCandidate;
 const speakerIsCandidate = !echo.data.speaker && !!echo.data.speakerCandidate;
+const base = import.meta.env.BASE_URL;
 ---
 <Base title={`${echo.data.editorialTitle} · 回声收集站`} description={echo.data.editorialSummary}>
   <article class="detail">
@@ -30,7 +31,7 @@ const speakerIsCandidate = !echo.data.speaker && !!echo.data.speakerCandidate;
     <h1>“{echo.data.quote}”</h1>
 
     <div class="taglist">
-      {echo.data.topics.map((t) => <a class="tag" href={`/echoes/?topic=${encodeURIComponent(t)}`}>{t}</a>)}
+      {echo.data.topics.map((t) => <a class="tag" href={`${base}echoes/?topic=${encodeURIComponent(t)}`}>{t}</a>)}
     </div>
 
     <p class="lead">{echo.data.editorialSummary}</p>
@@ -38,7 +39,7 @@ const speakerIsCandidate = !echo.data.speaker && !!echo.data.speakerCandidate;
     <div class="source">
       <div>
         <strong>出处：</strong>
-        <a class="link-strong" href={`/interviews/${interview.id}/`}>《{interview.data.title}》</a>
+        <a class="link-strong" href={`${base}interviews/${interview.id}/`}>《{interview.data.title}》</a>
       </div>
       <div>
         <strong>说话者：</strong>
@@ -93,6 +94,6 @@ const speakerIsCandidate = !echo.data.speaker && !!echo.data.speakerCandidate;
       </section>
     )}
 
-    <a class="back" href="/echoes/">← 返回全部回声</a>
+    <a class="back" href={`${base}echoes/`}>← 返回全部回声</a>
   </article>
 </Base>

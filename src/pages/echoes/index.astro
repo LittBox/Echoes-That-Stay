@@ -4,6 +4,7 @@ import EchoRow from '../../components/EchoRow.astro';
 import { getAllEchoes } from '../../lib/echoes';
 const echoes = await getAllEchoes();
 const topics = [...new Set(echoes.flatMap(e => e.data.topics))];
+const base = import.meta.env.BASE_URL;
 ---
 <Base title="全部回声 · Echoes That Stay">
   <header class="page-head"><div class="eyebrow">The collection</div><h1>所有回声</h1><p>在这里寻找那些留在心里的话。你可以按原句、自己的概括、人物或主题搜索。</p><div class="statline"><span>{echoes.length} 条回声</span><span>持续收集中</span></div></header>

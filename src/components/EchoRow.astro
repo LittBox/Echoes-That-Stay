@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { echo } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 
 const {
@@ -31,7 +32,7 @@ const displaySpeaker =
   </div>
 
   <h2 class="echo-row__title">
-    <a href={`/echoes/${echo.id}/`}>
+    <a href={`${base}echoes/${echo.id}/`}>
       {editorialTitle}
       <span aria-hidden="true">↗</span>
     </a>

@@ -36,6 +36,8 @@ const topics = [
     echoes.flatMap((echo) => echo.data.topics)
   ),
 ].slice(0, 6);
+
+const base = import.meta.env.BASE_URL;
 ---
 <Base>
   <section class="hero">
@@ -45,7 +47,7 @@ const topics = [
     <p class="intro">Echoes That Stay is my collection of words that linger long after an interview ends — the lines I don’t want to lose, and the ones I return to when I need to recharge.</p>
     
 <div class="actions">
-  <a class="action-link" href="/echoes/">
+  <a class="action-link" href={`${import.meta.env.BASE_URL}echoes/`}>
     <!-- 声波图标 -->
     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
       <path
@@ -58,7 +60,7 @@ const topics = [
     <span>浏览回声</span>
   </a>
 
-  <a class="action-link" href="/about/">
+  <a class="action-link" href={`${import.meta.env.BASE_URL}about/`}>
     <!-- 灯塔图标 -->
     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
       <path
@@ -94,7 +96,7 @@ const topics = [
       <h2>此刻想重读的一句</h2>
 
       {featured && (
-        <a href={`/echoes/${featured.id}/`}>
+        <a href={`${base}echoes/${featured.id}/`}>
           阅读这条回声 →
         </a>
       )}
@@ -106,7 +108,7 @@ const topics = [
           FEATURED ECHO
         </div>
 
-        <a href={`/echoes/${featured.id}/`}>
+        <a href={`${base}echoes/${featured.id}/`}>
           <blockquote>
             “{featured.data.quote}”
           </blockquote>
@@ -135,7 +137,7 @@ const topics = [
   <section class="section">
     <div class="section-head">
       <h2>最近收集的回声</h2>
-      <a href="/echoes/">全部回声 →</a>
+      <a href={`${base}echoes/`}>全部回声 →</a>
     </div>
 
     <ul class="echo-list">
@@ -146,5 +148,5 @@ const topics = [
       ))}
     </ul>
   </section>
-  <section class="section"><div class="section-head"><h2>按主题重读</h2><a href="/echoes/">探索全部主题 →</a></div><div class="topiclinks">{topics.map(topic => <a href={`/echoes/?topic=${encodeURIComponent(topic)}`}>{topic} ↗</a>)}</div></section>
+  <section class="section"><div class="section-head"><h2>按主题重读</h2><a href={`${base}echoes/`}>探索全部主题 →</a></div><div class="topiclinks">{topics.map(topic => <a href={`${base}echoes/?topic=${encodeURIComponent(topic)}`}>{topic} ↗</a>)}</div></section>
 </Base>

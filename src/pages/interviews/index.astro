@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 
 const interviews = await getCollection('interviews');
 const echoes = await getCollection('echoes');
+const base = import.meta.env.BASE_URL;
 ---
 <Base title="访谈 · 回声收集站">
   <header class="page-head">
@@ -18,7 +19,7 @@ const echoes = await getCollection('echoes');
         <div class="eyebrow">
           Interview · {echoes.filter((e) => e.data.interview.id === i.id).length} echoes
         </div>
-        <a href={`/interviews/${i.id}/`}>
+        <a href={`${base}interviews/${i.id}/`}>
           <h2>{i.data.title} →</h2>
         </a>
         <p>
