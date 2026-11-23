@@ -1,0 +1,9 @@
+{
+  "name": "echoes-that-stay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"dev":"astro dev --host 0.0.0.0", "build":"astro build", "preview":"astro preview --host 0.0.0.0"},
+  "dependencies": {"astro":"^5.16.0", "zod":"^3.25.0"},
+  "devDependencies": {"typescript":"^5.9.0"}
+}

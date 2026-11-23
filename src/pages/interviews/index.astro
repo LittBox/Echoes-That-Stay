@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const interviews = await getCollection('interviews');
+const echoes = await getCollection('echoes');
+---
+<Base title="访谈 · 回声收集站">
+  <header class="page-head">
+    <div class="eyebrow">Sources & conversations</div>
+    <h1>访谈档案</h1>
+    <p>每一期访谈都是一处声音的来源。回到节目本身，重新遇见留下的那些句子。</p>
+  </header>
+
+  <div>
+    {interviews.map((i) => (
+      <article class="interview-card">
+        <div class="eyebrow">
+          Interview · {echoes.filter((e) => e.data.interview.id === i.id).length} echoes
+        </div>
+        <a href={`/interviews/${i.id}/`}>
+          <h2>{i.data.title} →</h2>
+        </a>
+        <p>
+          {i.data.showName ?? '节目名称待确认'}
+          {i.data.participants.length > 0 && ` · 参与者：${i.data.participants.join('、')}`}
+        </p>
+      </article>
+    ))}
+  </div>
+</Base>

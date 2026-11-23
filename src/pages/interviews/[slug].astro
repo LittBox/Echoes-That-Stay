@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import EchoRow from '../../components/EchoRow.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return (await getCollection('interviews')).map(interview => ({ params: { slug: interview.id }, props: { interview } }));
+}
+
+const { interview } = Astro.props;
+
+const echoes = (await getCollection('echoes'))
+  .filter((e) => e.data.interview.id === interview.id)
+  .sort((a, b) => a.data.sourceRange.startMs - b.data.sourceRange.startMs);
+---
+<Base title={`${interview.data.title} · 访谈档案`}>
+  <header class="page-head">
+    <div class="eyebrow">Interview archive / {String(interview.data.episodeNumber).padStart(3, '0')}</div>
+    <h1>{interview.data.title}</h1>
+    <div class="statline">
+      <span>{interview.data.showName ?? '节目名称待确认'}</span>
+      <span>{echoes.length} 条回声</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>节目资料</h2>
+      <a href={interview.data.sourceUrl} target="_blank" rel="noopener noreferrer">在 B 站观看原视频 ↗</a>
+    </div>
+    <div class="content-prose">
+      <p>
+        参与者：{interview.data.participants.join('、') || '待确认'}<br />
+        视频编号：{interview.data.sourceVideoId ?? '待确认'}
+      </p>
+    </div>
+    <p class="alert">目前引文来自已整理的字幕样本。说话者归属、字幕时间与 B 站实际视频的对齐仍需逐项核验。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>这一期留下的回声</h2>
+      <span class="micro">{echoes.length} 条</span>
+    </div>
+    <ul class="echo-list">
+      {echoes.map((e) => (
+        <li>
+          <EchoRow echo={e} />
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <a class="back" href="/interviews/">← 返回访谈档案</a>
+</Base>

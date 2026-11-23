@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+const { title = '回声收集站 · Echoes That Stay', description = '有些话，听完很久，依然有回声。' } = Astro.props;
+const path = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#fbfaf7" />
+  <title>{title}</title>
+</head>
+<body>
+  <header class="topbar"><div class="shell nav-inner">
+    <a class="brand" href="/" aria-label="回声收集站首页">Echoes<span>.</span>That<span>.</span>Stay</a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/echoes/" aria-current={path.startsWith('/echoes') ? 'page' : undefined}>回声</a>
+      <a href="/interviews/" aria-current={path.startsWith('/interviews') ? 'page' : undefined}>访谈</a>
+      <a href="/about/" aria-current={path === '/about/' ? 'page' : undefined}>关于</a>
+    </nav>
+  </div></header>
+  <main class="shell"><slot /></main>
+  <footer class="footer"><div class="shell footer-inner"><span>© {new Date().getFullYear()} Echoes That Stay · 回声收集站</span><span>Some words stay. This is where I keep them.</span></div></footer>
+</body>
+</html>

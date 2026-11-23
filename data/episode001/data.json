@@ -1,0 +1,422 @@
+{
+  "schemaVersion": "1.0",
+  "project": "Echoes That Stay",
+  "episode": "001",
+  "episodeTitle": "鲁豫对话金靖：什么是真正的自由",
+  
+  
+  "editorialFields": [
+    "editorialTitle",
+    "editorialSummary",
+    "context",
+    "searchKeywords",
+    "topics"
+  ],
+  "editorialFieldsAuthor": "assistant",
+  "interviews": [
+    {
+      "id": "luyu-jinjing-true-freedom",
+      "title": "鲁豫对话金靖：什么是真正的自由",
+      "titleOrigin": "uploaded_filename",
+      "showName": null,
+      "participants": [
+        "鲁豫",
+        "金靖"
+      ],
+      "participantEvidence": "uploaded_filename_and_dialogue_context",
+      "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+      
+      "sourcePlatform": "bilibili",
+      "sourceVideoId": "BV1axZJBnE78",
+      "sourcePageReadStatus": "unavailable_http_412",
+      "subtitleVideoAlignmentVerified": false,
+      "publishedAt": null,
+      "videoDurationMs": null,
+      "subtitleStartMs": 3120,
+      "subtitleEndMs": 1436399,
+      "subtitleEndMeaning": "last_subtitle_end_not_verified_video_duration",
+      "subtitleCueCount": 708,
+      "transcript": "transcripts/luyu-jinjing-true-freedom.json",
+      "sourceAssets": [
+        {
+          "path": "sources/interview.srt",
+          "originalFilename": "鲁豫对话金靖：什么是真正的自由.f100026.srt",
+          "sha256": "cc60d329c1e3fa0d175e867a4bced6c0173d3725b31d7d41467dea4385a2355f",
+          "byteSize": 43386,
+          "origin": "user_uploaded_attachment"
+        },
+        {
+          "path": "sources/interview.txt",
+          "originalFilename": "鲁豫对话金靖：什么是真正的自由.f100026.txt",
+          "sha256": "b5d52bc40fc2f0e2499d39e0ac3a71b4a7410c5d4ef205350e8c2211d3a5683d",
+          "byteSize": 18714,
+          "origin": "user_uploaded_attachment"
+        }
+      ],
+      "status": "validated"
+    }
+  ],
+  "echoes": [
+    {
+      "id": "luyu-jinjing-emotions",
+      "interview": "luyu-jinjing-true-freedom",
+      "editorialTitle": "情绪不必急着分好坏",
+      "quote": "我越来越觉得没有什么所谓的好的情绪和不好的情绪。",
+      "originalSubtitleText": "我越来越觉得没有什么\n所谓的好的情绪和不好的情绪",
+      "textKind": "subtitle_excerpt",
+      "textVerification": "matched_to_uploaded_subtitles",
+      "audioVideoVerified": false,
+      "speaker": null,
+      "speakerCandidate": "鲁豫",
+      "speakerStatus": "inferred_from_context",
+      "speakerEvidence": "本段承接对另一位参与者“我很容易哭出来”的回应；结合前文关于主持工作与情绪表达的自述，推定为鲁豫。",
+      "sourceAsset": "sources/interview.srt",
+      "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+      "sourcePlaybackUrl": "https://player.bilibili.com/player.html?bvid=BV1axZJBnE78&t=461&autoplay=0",
+      "sourceStartSeconds": 461,
+      "sourceStartLabel": "07:41",
+      "sourcePlaybackLabel": "从 07:41 回看",
+      "subtitleVideoAlignmentVerified": false,
+      "sourceRange": {
+        "startCue": 233,
+        "endCue": 234,
+        "startMs": 461600,
+        "endMs": 465679,
+        "startTimecode": "00:07:41,600",
+        "endTimecode": "00:07:45,679"
+      },
+      "contextRange": {
+        "startCue": 228,
+        "endCue": 250,
+        "startMs": 449480,
+        "endMs": 492479,
+        "startTimecode": "00:07:29,480",
+        "endTimecode": "00:08:12,479"
+      },
+      "contextSubtitleText": "我很容易哭出来\n经常讲着讲着话就会要哭出来\n这是特別好的\n就是允许自己的情绪\n有这样流动的时候\n我越来越觉得没有什么\n所谓的好的情绪和不好的情绪\n我最追求的\n我觉得人生最高的境界\n它不是说无喜无悲\n那个境界太高了\n我不想到那个境界\n我希望是我能夠感受周围的一切\n嗯\n我內心是有激情的\n但是那个激情被一层平静包里着\n因为我希望我的能量是\n一直是平缓的\n像水一样流动\n不争先\n但是要滔滔不绝\n(这)是我最近也想要追求\n自己达到的一个境界",
+      "context": "前文谈到是否容易哭出来，随后讨论希望怎样感受周围的一切、保持怎样的能量状态。",
+      "topics": [
+        "情绪",
+        "自我接纳"
+      ],
+      "editorialSummary": "给不同情绪存在和流动的空间。",
+      "searchKeywords": [
+        "情绪好坏",
+        "允许难过",
+        "情绪流动",
+        "接纳情绪"
+      ],
+      "editorialAuthor": "assistant",
+      "personalNote": null,
+      "collectedAt": null,
+      "status": "validated",
+      "featuredCandidate": false,
+      "displayEdits": [
+        "join_subtitle_lines",
+        "add_punctuation_only"
+      ]
+    },
+    {
+      "id": "luyu-jinjing-flow",
+      "interview": "luyu-jinjing-true-freedom",
+      "editorialTitle": "让能量持续流动",
+      "quote": "像水一样流动，不争先，但是要滔滔不绝。",
+      "originalSubtitleText": "像水一样流动\n不争先\n但是要滔滔不绝",
+      "textKind": "subtitle_excerpt",
+      "textVerification": "matched_to_uploaded_subtitles",
+      "audioVideoVerified": false,
+      "speaker": null,
+      "speakerCandidate": "鲁豫",
+      "speakerStatus": "inferred_from_context",
+      "speakerEvidence": "与前段关于情绪和能量的连续自述相接；结合上下文推定为鲁豫，字幕本身没有人物标签。",
+      "sourceAsset": "sources/interview.srt",
+      "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+      "sourcePlaybackUrl": "https://player.bilibili.com/player.html?bvid=BV1axZJBnE78&t=485&autoplay=0",
+      "sourceStartSeconds": 485,
+      "sourceStartLabel": "08:05",
+      "sourcePlaybackLabel": "从 08:05 回看",
+      "subtitleVideoAlignmentVerified": false,
+      "sourceRange": {
+        "startCue": 246,
+        "endCue": 248,
+        "startMs": 485280,
+        "endMs": 488879,
+        "startTimecode": "00:08:05,280",
+        "endTimecode": "00:08:08,879"
+      },
+      "contextRange": {
+        "startCue": 233,
+        "endCue": 250,
+        "startMs": 461600,
+        "endMs": 492479,
+        "startTimecode": "00:07:41,600",
+        "endTimecode": "00:08:12,479"
+      },
+      "contextSubtitleText": "我越来越觉得没有什么\n所谓的好的情绪和不好的情绪\n我最追求的\n我觉得人生最高的境界\n它不是说无喜无悲\n那个境界太高了\n我不想到那个境界\n我希望是我能夠感受周围的一切\n嗯\n我內心是有激情的\n但是那个激情被一层平静包里着\n因为我希望我的能量是\n一直是平缓的\n像水一样流动\n不争先\n但是要滔滔不绝\n(这)是我最近也想要追求\n自己达到的一个境界",
+      "context": "前两条字幕是“因为我希望我的能量是／一直是平缓的”，这里描述希望保持怎样的能量状态。",
+      "topics": [
+        "节奏",
+        "内在力量"
+      ],
+      "editorialSummary": "比起争先，更希望自己的能量能够持续流动。",
+      "searchKeywords": [
+        "不争先",
+        "持续",
+        "能量",
+        "自己的节奏",
+        "慢慢来"
+      ],
+      "editorialAuthor": "assistant",
+      "personalNote": null,
+      "collectedAt": null,
+      "status": "draft",
+      "featuredCandidate": true,
+      "displayEdits": [
+        "join_subtitle_lines",
+        "add_punctuation_only"
+      ]
+    },
+    {
+      "id": "luyu-jinjing-time-zone",
+      "interview": "luyu-jinjing-true-freedom",
+      "editorialTitle": "与自己生活在不同的时区",
+      "quote": "我很多时候跟自己生活在不同的时区，是有时差的。永远都是回过头去看，你觉得当时自己如此之明媚，但那一刻，其实你没有享受当时的明媚跟美好。",
+      "originalSubtitleText": "我很多时候跟自己生活在不同的时区\n是有时差的\n永远都是回过头去看\n你觉得当时自己如此之明媚\n但那一刻\n其实你没有享受当时的明媚跟美好",
+      "textKind": "subtitle_excerpt",
+      "textVerification": "matched_to_uploaded_subtitles",
+      "audioVideoVerified": false,
+      "speaker": null,
+      "speakerCandidate": "鲁豫",
+      "speakerStatus": "inferred_from_context",
+      "speakerEvidence": "该段后续出现“那这一切你是现在／可能在你30多岁的时候”的追问，结合访谈双方身份，推定发言人为鲁豫。",
+      "sourceAsset": "sources/interview.srt",
+      "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+      "sourcePlaybackUrl": "https://player.bilibili.com/player.html?bvid=BV1axZJBnE78&t=638&autoplay=0",
+      "sourceStartSeconds": 638,
+      "sourceStartLabel": "10:38",
+      "sourcePlaybackLabel": "从 10:38 回看",
+      "subtitleVideoAlignmentVerified": false,
+      "sourceRange": {
+        "startCue": 330,
+        "endCue": 335,
+        "startMs": 638200,
+        "endMs": 650479,
+        "startTimecode": "00:10:38,200",
+        "endTimecode": "00:10:50,479"
+      },
+      "contextRange": {
+        "startCue": 329,
+        "endCue": 350,
+        "startMs": 637280,
+        "endMs": 676039,
+        "startTimecode": "00:10:37,280",
+        "endTimecode": "00:11:16,039"
+      },
+      "contextSubtitleText": "我老说\n我很多时候跟自己生活在不同的时区\n是有时差的\n永远都是回过头去看\n你觉得当时自己如此之明媚\n但那一刻\n其实你没有享受当时的明媚跟美好\n所以我说此刻我也不要\n跟自己生活在不同的时区里面\n我的身体\n我的样子\n年纪\n生活带给我的所有的酸甜苦辣\n好像我都可以接受它\n这也是我今年一个很大的一个改变\n就当我开始\n理解我的身体\n也开始支持我的身体\n那这一切你是现在\n可能在你30 多岁的时候\n你就已经意识到\n而且敢于表达的",
+      "context": "这一段承接对身体与自我接纳的讨论，随后谈到希望此刻也接纳自己的样子、年纪和经历。",
+      "topics": [
+        "当下",
+        "自我接纳",
+        "回望"
+      ],
+      "editorialSummary": "回头才看见从前的美好，也提醒自己及时感受现在。",
+      "searchKeywords": [
+        "时差",
+        "错过当下",
+        "过去的自己",
+        "明媚",
+        "珍惜现在"
+      ],
+      "editorialAuthor": "assistant",
+      "personalNote": null,
+      "collectedAt": null,
+      "status": "draft",
+      "featuredCandidate": false,
+      "displayEdits": [
+        "join_subtitle_lines",
+        "add_punctuation_only"
+      ]
+    },
+    {
+      "id": "luyu-jinjing-beauty-freedom",
+      "interview": "luyu-jinjing-true-freedom",
+      "editorialTitle": "美与自由",
+      "quote": "而且美必须是自由的副产品。如果美不是来自于自由，它不是和自由结合在一起的话，它就是对我们的一种极大的束缚。",
+      "originalSubtitleText": "而且美必须是自由的副产品\n如果美不是来自于自由\n它不是和自由结合在一起的话\n它就是对我们的一种极大的束缚",
+      "textKind": "subtitle_excerpt",
+      "textVerification": "matched_to_uploaded_subtitles",
+      "audioVideoVerified": false,
+      "speaker": null,
+      "speakerCandidate": "鲁豫",
+      "speakerStatus": "inferred_from_context",
+      "speakerEvidence": "前文以“可以像你在《走走停停》里面那样”指向金靖，后文谈“我们那一代女孩”，推定本段为鲁豫发言。",
+      "sourceAsset": "sources/interview.srt",
+      "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+      "sourcePlaybackUrl": "https://player.bilibili.com/player.html?bvid=BV1axZJBnE78&t=759&autoplay=0",
+      "sourceStartSeconds": 759,
+      "sourceStartLabel": "12:39",
+      "sourcePlaybackLabel": "从 12:39 回看",
+      "subtitleVideoAlignmentVerified": false,
+      "sourceRange": {
+        "startCue": 388,
+        "endCue": 391,
+        "startMs": 759840,
+        "endMs": 769199,
+        "startTimecode": "00:12:39,840",
+        "endTimecode": "00:12:49,199"
+      },
+      "contextRange": {
+        "startCue": 383,
+        "endCue": 403,
+        "startMs": 749760,
+        "endMs": 791799,
+        "startTimecode": "00:12:29,760",
+        "endTimecode": "00:13:11,799"
+      },
+      "contextSubtitleText": "我觉得美也可以是有力量的\n可以像你在《走走停停》里面那样\n就是很強悍的\n孔武有力的\n我觉得都是美的体现\n而且美必须是自由的副产品\n如果美不是来自于自由\n它不是和自由结合在一起的话\n它就是对我们的一种极大的束缚\n而且更可怕的是\n它是以美之名\n在我成长的岁月当中\n我们那一代女孩\n是很被这个假以美之名\n很深地束缚住的\n但这几年\n你明显感到有一种被松绑的感觉\n好像我是可以呼吸的\n我的皮肤是可以呼吸的\n这感觉无比之畅快\n这是我想要的美的感觉",
+      "context": "此前讨论不同形式的美，后文谈到成长过程中以美之名形成的束缚，以及近年感受到的松绑。",
+      "topics": [
+        "自由",
+        "审美",
+        "自我选择"
+      ],
+      "editorialSummary": "美的追求需要与自己的自由选择相连。",
+      "searchKeywords": [
+        "美的标准",
+        "审美束缚",
+        "自由选择",
+        "外貌",
+        "松绑"
+      ],
+      "editorialAuthor": "assistant",
+      "personalNote": null,
+      "collectedAt": null,
+      "status": "draft",
+      "featuredCandidate": false,
+      "displayEdits": [
+        "join_subtitle_lines",
+        "add_punctuation_only"
+      ]
+    },
+    {
+      "id": "luyu-jinjing-craft",
+      "interview": "luyu-jinjing-true-freedom",
+      "editorialTitle": "手艺带来的底气",
+      "quote": "我认为我自己是一个手艺人，我的底气来自于我的手艺。",
+      "originalSubtitleText": "我认为我自己是一个手艺人\n我的底气来自于我的手艺",
+      "textKind": "subtitle_excerpt",
+      "textVerification": "matched_to_uploaded_subtitles",
+      "audioVideoVerified": false,
+      "speaker": null,
+      "speakerCandidate": "鲁豫",
+      "speakerStatus": "inferred_from_context",
+      "speakerEvidence": "此前发言者以制作节目回应专业质疑，随后向对方提问，结合访谈角色推定为鲁豫。",
+      "sourceAsset": "sources/interview.srt",
+      "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+      "sourcePlaybackUrl": "https://player.bilibili.com/player.html?bvid=BV1axZJBnE78&t=931&autoplay=0",
+      "sourceStartSeconds": 931,
+      "sourceStartLabel": "15:31",
+      "sourcePlaybackLabel": "从 15:31 回看",
+      "subtitleVideoAlignmentVerified": false,
+      "sourceRange": {
+        "startCue": 475,
+        "endCue": 476,
+        "startMs": 931600,
+        "endMs": 935879,
+        "startTimecode": "00:15:31,600",
+        "endTimecode": "00:15:35,879"
+      },
+      "contextRange": {
+        "startCue": 460,
+        "endCue": 484,
+        "startMs": 902680,
+        "endMs": 957919,
+        "startTimecode": "00:15:02,680",
+        "endTimecode": "00:15:57,919"
+      },
+      "contextSubtitleText": "但有一些会是影响到你\n比如关于你的专业\n关于你的节目\n那个是会影响到我\n我就做更多的好的节目去直面它\n我是专业的声音\n我就不信我盖不过你的声音\n这点我太有自信了\n所以我们得一直在\n然后有一天\n你就会特別强大地看\n什么3 粒米\n老娘吃的多少米你根本不知道\n那这一切就会盖过那所有的那些声音\n没有比这更好的回击了\n我认为我自己是一个手艺人\n我的底气来自于我的手艺\n我不知道你会怎么样\n去理解底气这两个字\n我对自己的信任吧\n就是我相信\n是o κ我可以坐在这里\n我可以站在这里给大家表演\n可以坐在这里讲话\n大家可以听",
+      "context": "前文谈到用更多好的节目回应关于专业的质疑；本句后，发言者询问对方如何理解底气。",
+      "topics": [
+        "工作",
+        "专业",
+        "自信"
+      ],
+      "editorialSummary": "把自己的底气建立在持续打磨的专业能力上。",
+      "searchKeywords": [
+        "底气",
+        "手艺",
+        "专业能力",
+        "回应质疑",
+        "自信"
+      ],
+      "editorialAuthor": "assistant",
+      "personalNote": null,
+      "collectedAt": null,
+      "status": "draft",
+      "featuredCandidate": false,
+      "displayEdits": [
+        "join_subtitle_lines",
+        "add_punctuation_only"
+      ]
+    },
+    {
+      "id": "luyu-jinjing-be-yourself",
+      "interview": "luyu-jinjing-true-freedom",
+      "editorialTitle": "忠于自己",
+      "quote": "忠于自己，真的是我今年找到的一个目标，就是每分每秒都活出真实的自己。",
+      "originalSubtitleText": "忠于自己\n真的是我\n今年找到的一个目标\n就是每分每秒都活出真实的自己",
+      "textKind": "subtitle_excerpt",
+      "textVerification": "matched_to_uploaded_subtitles",
+      "audioVideoVerified": false,
+      "speaker": null,
+      "speakerCandidate": "金靖",
+      "speakerStatus": "inferred_from_context",
+      "speakerEvidence": "前文鲁豫提及蒙田并表达自身追求，本段推定为金靖回应，后文出现“我觉得你还做得挺好的”。仅凭字幕无法确认换人位置。",
+      "sourceAsset": "sources/interview.srt",
+      "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+      "sourcePlaybackUrl": "https://player.bilibili.com/player.html?bvid=BV1axZJBnE78&t=1110&autoplay=0",
+      "sourceStartSeconds": 1110,
+      "sourceStartLabel": "18:30",
+      "sourcePlaybackLabel": "从 18:30 回看",
+      "subtitleVideoAlignmentVerified": false,
+      "sourceRange": {
+        "startCue": 566,
+        "endCue": 569,
+        "startMs": 1110080,
+        "endMs": 1117839,
+        "startTimecode": "00:18:30,080",
+        "endTimecode": "00:18:37,839"
+      },
+      "contextRange": {
+        "startCue": 559,
+        "endCue": 573,
+        "startMs": 1095280,
+        "endMs": 1126759,
+        "startTimecode": "00:18:15,280",
+        "endTimecode": "00:18:46,759"
+      },
+      "contextSubtitleText": "我特別相信蒙田讲的一句话\n他的意思就是人最难的一件事情\n就是真正地属於自己\n或真正地忠于自己\n我觉得这是我想做的\n就是做一个\n完全忠于自包和属于自己的一个人\n忠于自己\n真的是我\n今年找到的一个目标\n就是每分每秒都活出真实的自己\n我觉得你还做得挺好的\n就那么的能夠笃定地选择 挑选\n对于我来说\n我觉得我工作的时候是最美的",
+      "context": "前文谈到属于自己与忠于自己，这段作出回应；随后另一位参与者评价对方能够笃定地选择。",
+      "topics": [
+        "真实",
+        "自我选择"
+      ],
+      "editorialSummary": "把忠于自己的想法落实到日常生活中。",
+      "searchKeywords": [
+        "忠于自己",
+        "真实",
+        "自己的声音",
+        "做自己"
+      ],
+      "editorialAuthor": "assistant",
+      "personalNote": null,
+      "collectedAt": null,
+      "status": "draft",
+      "featuredCandidate": false,
+      "displayEdits": [
+        "join_subtitle_lines",
+        "add_punctuation_only"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import EchoRow from '../../components/EchoRow.astro';
+import { getAllEchoes } from '../../lib/echoes';
+const echoes = await getAllEchoes();
+const topics = [...new Set(echoes.flatMap(e => e.data.topics))];
+---
+<Base title="全部回声 · Echoes That Stay">
+  <header class="page-head"><div class="eyebrow">The collection</div><h1>所有回声</h1><p>在这里寻找那些留在心里的话。你可以按原句、自己的概括、人物或主题搜索。</p><div class="statline"><span>{echoes.length} 条回声</span><span>持续收集中</span></div></header>
+  <div class="searchbar"><input type="search" id="echo-search" placeholder="搜索一句话、一个话题、一种心情……" aria-label="搜索回声" /></div>
+  <div class="filters" aria-label="按主题筛选"><button class="filter active" data-filter="all" type="button">全部</button>{topics.map(topic => <button class="filter" data-filter={topic} type="button">{topic}</button>)}</div>
+  <ul class="echo-list" id="echo-results">{echoes.map(e => <li><EchoRow echo={e} /></li>)}</ul>
+  <p id="empty-message" class="empty" hidden>没有找到对应的回声，试试更简短的关键词。</p>
+  <script>
+    const input = document.querySelector<HTMLInputElement>('#echo-search');
+    const rows = Array.from(document.querySelectorAll<HTMLElement>('[data-echo-row]'));
+    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+    const empty = document.querySelector<HTMLElement>('#empty-message');
+    let topic = new URLSearchParams(window.location.search).get('topic') || 'all';
+    function apply() {
+      const term = (input?.value ?? '').trim().toLowerCase();
+      let count = 0;
+      for (const row of rows) {
+        const matches = (row.dataset.search ?? '').includes(term) && (topic === 'all' || (row.dataset.topics ?? '').split('|').includes(topic));
+        row.hidden = !matches;
+        if (matches) count++;
+      }
+      if (empty) empty.hidden = count > 0;
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.filter === topic));
+    }
+    input?.addEventListener('input', apply);
+    buttons.forEach(b => b.addEventListener('click', () => {
+      topic = b.dataset.filter || 'all';
+      const url = new URL(window.location.href);
+      if (topic === 'all') url.searchParams.delete('topic'); else url.searchParams.set('topic', topic);
+      history.replaceState(null, '', url);
+      apply();
+    }));
+    apply();
+  </script>
+</Base>

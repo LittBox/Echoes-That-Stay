@@ -1,0 +1,150 @@
+---
+import Base from '../layouts/Base.astro';
+import EchoRow from '../components/EchoRow.astro';
+
+import {
+  getAllEchoes,
+  getFeaturedEcho,
+  getAllInterviews,
+} from '../lib/echoes';
+
+// 读取全部回声
+const echoes = await getAllEchoes();
+
+// 读取首页精选回声
+const featured = await getFeaturedEcho();
+
+// 读取全部访谈
+const interviews = await getAllInterviews();
+
+// 建立访谈索引
+const interviewMap = new Map(
+  interviews.map((interview) => [
+    interview.id,
+    interview,
+  ])
+);
+
+// 精选回声对应的访谈
+const featuredInterview = featured
+  ? interviewMap.get(featured.data.interview.id)
+  : undefined;
+
+// 自动提取主题
+const topics = [
+  ...new Set(
+    echoes.flatMap((echo) => echo.data.topics)
+  ),
+].slice(0, 6);
+---
+<Base>
+  <section class="hero">
+    <div class="eyebrow">A personal collection of words that linger</div>
+    <h1>Hey, Welcome to<br />Echoes-That-Stay station.</h1>
+    <p class="tagline">Some words stay. This is where I keep them.</p>
+    <p class="intro">Echoes That Stay is my collection of words that linger long after an interview ends — the lines I don’t want to lose, and the ones I return to when I need to recharge.</p>
+    
+<div class="actions">
+  <a class="action-link" href="/echoes/">
+    <!-- 声波图标 -->
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path
+        d="M3 13v6M8 8v16M13 11v10M18 4v24M23 9v14M28 13v6"
+        stroke="currentColor"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+    </svg>
+    <span>浏览回声</span>
+  </a>
+
+  <a class="action-link" href="/about/">
+    <!-- 灯塔图标 -->
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path
+        d="M13 3h6l2 5H11l2-5Z"
+        fill="currentColor"
+      />
+      <path
+        d="M9 12h14l-3 5 3 12H9l3-12-3-5Z"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12 12h8M15 20h2v5h-2z"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+      />
+      <path
+        d="M7 8 3 6M25 8l4-2M6 13H2M26 13h4"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      />
+    </svg>
+    <span>关于收集站</span>
+  </a>
+</div>
+
+  </section>
+  <section class="section">
+    <div class="section-head">
+      <h2>此刻想重读的一句</h2>
+
+      {featured && (
+        <a href={`/echoes/${featured.id}/`}>
+          阅读这条回声 →
+        </a>
+      )}
+    </div>
+
+    {featured ? (
+      <article class="featured">
+        <div class="eyebrow">
+          FEATURED ECHO
+        </div>
+
+        <a href={`/echoes/${featured.id}/`}>
+          <blockquote>
+            “{featured.data.quote}”
+          </blockquote>
+        </a>
+
+        <div class="meta">
+          {featuredInterview && (
+            <>
+              来自《{featuredInterview.data.title}》
+              {' · '}
+            </>
+          )}
+
+          {featured.data.sourceStartLabel}
+
+          <p>
+            {featured.data.editorialSummary}
+          </p>
+        </div>
+      </article>
+    ) : (
+      <p>还没有收录精选回声。</p>
+    )}
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>最近收集的回声</h2>
+      <a href="/echoes/">全部回声 →</a>
+    </div>
+
+    <ul class="echo-list">
+      {echoes.slice(0, 6).map((echo) => (
+        <li>
+          <EchoRow echo={echo} />
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section class="section"><div class="section-head"><h2>按主题重读</h2><a href="/echoes/">探索全部主题 →</a></div><div class="topiclinks">{topics.map(topic => <a href={`/echoes/?topic=${encodeURIComponent(topic)}`}>{topic} ↗</a>)}</div></section>
+</Base>

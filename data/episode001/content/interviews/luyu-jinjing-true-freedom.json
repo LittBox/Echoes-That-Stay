@@ -1,0 +1,42 @@
+{
+  "id": "luyu-jinjing-true-freedom",
+  "episodeNumber": 1,
+  "title": "鲁豫对话金靖：什么是真正的自由",
+  "titleOrigin": "uploaded_filename",
+  "showName": null,
+  "participants": [
+    "鲁豫",
+    "金靖"
+  ],
+  "participantEvidence": "uploaded_filename_and_dialogue_context",
+  "sourceUrl": "https://www.bilibili.com/video/BV1axZJBnE78/",
+  "sourceUrlOrigin": "user_provided_canonicalized",
+  "sourcePlatform": "bilibili",
+  "sourceVideoId": "BV1axZJBnE78",
+  "sourcePageReadStatus": "unavailable_http_412",
+  "subtitleVideoAlignmentVerified": false,
+  "publishedAt": null,
+  "videoDurationMs": null,
+  "subtitleStartMs": 3120,
+  "subtitleEndMs": 1436399,
+  "subtitleEndMeaning": "last_subtitle_end_not_verified_video_duration",
+  "subtitleCueCount": 708,
+  "transcript": "transcripts/luyu-jinjing-true-freedom.json",
+  "sourceAssets": [
+    {
+      "path": "sources/interview.srt",
+      "originalFilename": "鲁豫对话金靖：什么是真正的自由.f100026.srt",
+      "sha256": "cc60d329c1e3fa0d175e867a4bced6c0173d3725b31d7d41467dea4385a2355f",
+      "byteSize": 43386,
+      "origin": "user_uploaded_attachment"
+    },
+    {
+      "path": "sources/interview.txt",
+      "originalFilename": "鲁豫对话金靖：什么是真正的自由.f100026.txt",
+      "sha256": "b5d52bc40fc2f0e2499d39e0ac3a71b4a7410c5d4ef205350e8c2211d3a5683d",
+      "byteSize": 18714,
+      "origin": "user_uploaded_attachment"
+    }
+  ],
+  "status": "draft"
+}

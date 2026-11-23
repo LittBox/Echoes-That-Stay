@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+import EchoRow from '../../components/EchoRow.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  return (await getCollection('echoes')).map(echo => ({ params: { slug: echo.id }, props: { echo } }));
+}
+
+const { echo } = Astro.props;
+
+const interview = await getEntry(echo.data.interview);
+const { Content } = await render(echo);
+
+const related = (await getCollection('echoes'))
+  .filter(
+    (e) =>
+      e.id !== echo.id &&
+      (e.data.interview.id === echo.data.interview.id ||
+        e.data.topics.some((t) => echo.data.topics.includes(t)))
+  )
+  .slice(0, 3);
+
+const speakerName = echo.data.speaker ?? echo.data.speakerCandidate;
+const speakerIsCandidate = !echo.data.speaker && !!echo.data.speakerCandidate;
+---
+<Base title={`${echo.data.editorialTitle} · 回声收集站`} description={echo.data.editorialSummary}>
+  <article class="detail">
+    <div class="eyebrow">Echo · {echo.data.sourceStartLabel}</div>
+    <h1>“{echo.data.quote}”</h1>
+
+    <div class="taglist">
+      {echo.data.topics.map((t) => <a class="tag" href={`/echoes/?topic=${encodeURIComponent(t)}`}>{t}</a>)}
+    </div>
+
+    <p class="lead">{echo.data.editorialSummary}</p>
+
+    <div class="source">
+      <div>
+        <strong>出处：</strong>
+        <a class="link-strong" href={`/interviews/${interview.id}/`}>《{interview.data.title}》</a>
+      </div>
+      <div>
+        <strong>说话者：</strong>
+        {speakerName ?? '尚待确认'}
+        {speakerIsCandidate && '（推定）'}
+        {!echo.data.audioVideoVerified && '（待音视频核验）'}
+      </div>
+      <div>
+        <strong>时间位置：</strong>
+        {echo.data.sourceStartLabel}
+        {echo.data.sourceRange.endTimecode ? ` – ${echo.data.sourceRange.endTimecode}` : ''}
+      </div>
+      <div>
+        <strong>类型：</strong>
+        {echo.data.textKind === 'subtitle_excerpt' ? '字幕摘录（已整理标点）' : '我的转述'}
+      </div>
+      <div>
+        <a class="link-strong" href={echo.data.sourcePlaybackUrl} target="_blank" rel="noopener noreferrer">{echo.data.sourcePlaybackLabel}</a>
+        {` · `}
+        <a href={interview.data.sourceUrl} target="_blank" rel="noopener noreferrer">观看原视频 ↗</a>
+      </div>
+    </div>
+
+    {!echo.data.audioVideoVerified && (
+      <p class="note">说明：当前仅依据已整理的字幕样本记录文字与时间码，尚未与音视频逐条核对；B 站播放器的时间跳转效果也需要实际检查。</p>
+    )}
+
+    {echo.data.context && (
+      <section class="detail-section">
+        <h2>当时的上下文</h2>
+        <p class="note">{echo.data.context}</p>
+      </section>
+    )}
+
+    <section class="detail-section">
+      <h2>为什么留下它</h2>
+      <p class="note">
+        {echo.data.personalNote ?? '这部分留给站长记录自己的感想。暂不代写。'}
+      </p>
+    </section>
+
+    {related.length > 0 && (
+      <section class="detail-section">
+        <h2>你可能还想重读</h2>
+        <ul class="echo-list">
+          {related.map((e) => (
+            <li>
+              <EchoRow echo={e} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <a class="back" href="/echoes/">← 返回全部回声</a>
+  </article>
+</Base>
